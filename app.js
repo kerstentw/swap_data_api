@@ -87,18 +87,18 @@ app.get("/", (req,res)=>{
 
 
 app.get("/get_aave_apr", async (req, res)=>{
-    let options = {address: AAVE_LPC_ADDR}
+  let options = {address: AAVE_LPC_ADDR}
 
-    let aave_lpc_addr = new web3.eth.Contract(AAVE_LPC_ABI,AAVE_LPC_ADDR);
-      aprs = new Array
+  let aave_lpc_addr = new web3.eth.Contract(AAVE_LPC_ABI,AAVE_LPC_ADDR);
+  aprs = new Array;
 
-      for (let i = 0; i < RESERVES.length; i++) {
-        let n = await getAPRFromContract(RESERVES[i], aave_lpc_addr.methods.getReserveData);
-        n.abbr = A_TOKEN_MAPS[n.aTokenAddress]
-        aprs.push(n)
-      }
+  for (let i = 0; i < RESERVES.length; i++) {
+    let n = await getAPRFromContract(RESERVES[i], aave_lpc_addr.methods.getReserveData);
+    n.abbr = A_TOKEN_MAPS[n.aTokenAddress];
+    aprs.push(n);
+  }
 
-      res.send(aprs)
+  res.send({data: aprs});
 })
 
 app.get("/get_reserves", (req, res)=>{
