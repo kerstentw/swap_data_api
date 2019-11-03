@@ -68,6 +68,34 @@ const RESERVES =  [ '0xFf795577d9AC8bD7D90Ee22b6C1703490b6512FD',
 
 AAVE_LPC_ABI = [{"constant":true,"inputs":[],"name":"addressesProvider","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"inputs":[{"name":"_addressesProvider","type":"address"}],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_reserve","type":"address"},{"indexed":true,"name":"_user","type":"address"},{"indexed":false,"name":"_amount","type":"uint256"},{"indexed":true,"name":"_referral","type":"uint16"},{"indexed":false,"name":"timestamp","type":"uint256"}],"name":"Deposit","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_reserve","type":"address"},{"indexed":true,"name":"_user","type":"address"},{"indexed":false,"name":"_amount","type":"uint256"},{"indexed":false,"name":"timestamp","type":"uint256"}],"name":"RedeemUnderlying","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_reserve","type":"address"},{"indexed":true,"name":"_user","type":"address"},{"indexed":false,"name":"_amount","type":"uint256"},{"indexed":true,"name":"_referral","type":"uint16"},{"indexed":false,"name":"timestamp","type":"uint256"}],"name":"Borrow","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_reserve","type":"address"},{"indexed":true,"name":"_user","type":"address"},{"indexed":false,"name":"_amount","type":"uint256"},{"indexed":false,"name":"timestamp","type":"uint256"}],"name":"Repay","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_collateral","type":"address"},{"indexed":true,"name":"_user","type":"address"},{"indexed":false,"name":"_amount","type":"uint256"},{"indexed":true,"name":"_reserve","type":"address"},{"indexed":false,"name":"timestamp","type":"uint256"}],"name":"LiquidationCall","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_reserve","type":"address"},{"indexed":true,"name":"_user","type":"address"},{"indexed":false,"name":"timestamp","type":"uint256"}],"name":"Swap","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_target","type":"address"},{"indexed":true,"name":"_reserve","type":"address"},{"indexed":false,"name":"_amount","type":"uint256"},{"indexed":false,"name":"_fee","type":"uint256"},{"indexed":false,"name":"timestamp","type":"uint256"}],"name":"FlashLoan","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_reserve","type":"address"},{"indexed":true,"name":"_user","type":"address"}],"name":"ReserveUsedAsCollateralEnabled","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_reserve","type":"address"},{"indexed":true,"name":"_user","type":"address"}],"name":"ReserveUsedAsCollateralDisabled","type":"event"},{"constant":false,"inputs":[{"name":"_reserve","type":"address"},{"name":"_amount","type":"uint256"},{"name":"_referralCode","type":"uint16"}],"name":"deposit","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":false,"inputs":[{"name":"_reserve","type":"address"},{"name":"_user","type":"address"},{"name":"_amount","type":"uint256"}],"name":"redeemUnderlying","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_reserve","type":"address"},{"name":"_amount","type":"uint256"},{"name":"_interestRateMode","type":"uint256"},{"name":"_referralCode","type":"uint16"}],"name":"borrow","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_reserve","type":"address"},{"name":"_amount","type":"uint256"},{"name":"_onBehalfOf","type":"address"}],"name":"repay","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":false,"inputs":[{"name":"_reserve","type":"address"}],"name":"swapBorrowRateMode","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_reserve","type":"address"},{"name":"_user","type":"address"}],"name":"rebalanceFixedBorrowRate","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_reserve","type":"address"},{"name":"_useAsCollateral","type":"bool"}],"name":"setUserUseReserveAsCollateral","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_collateral","type":"address"},{"name":"_reserve","type":"address"},{"name":"_user","type":"address"},{"name":"_purchaseAmount","type":"uint256"},{"name":"_receiveAToken","type":"bool"}],"name":"liquidationCall","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":false,"inputs":[{"name":"_receiver","type":"address"},{"name":"_reserve","type":"address"},{"name":"_amount","type":"uint256"}],"name":"flashLoan","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"_reserve","type":"address"}],"name":"getReserveConfigurationData","outputs":[{"name":"ltv","type":"uint256"},{"name":"liquidationThreshold","type":"uint256"},{"name":"liquidationDiscount","type":"uint256"},{"name":"interestRateStrategyAddress","type":"address"},{"name":"usageAsCollateralEnabled","type":"bool"},{"name":"borrowingEnabled","type":"bool"},{"name":"fixedBorrowRateEnabled","type":"bool"},{"name":"isActive","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"_reserve","type":"address"}],"name":"getReserveData","outputs":[{"name":"totalLiquidity","type":"uint256"},{"name":"availableLiquidity","type":"uint256"},{"name":"totalBorrowsFixed","type":"uint256"},{"name":"totalBorrowsVariable","type":"uint256"},{"name":"liquidityRate","type":"uint256"},{"name":"variableBorrowRate","type":"uint256"},{"name":"fixedBorrowRate","type":"uint256"},{"name":"averageFixedBorrowRate","type":"uint256"},{"name":"utilizationRate","type":"uint256"},{"name":"liquidityIndex","type":"uint256"},{"name":"variableBorrowIndex","type":"uint256"},{"name":"aTokenAddress","type":"address"},{"name":"lastUpdateTimestamp","type":"uint40"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"_user","type":"address"}],"name":"getUserAccountData","outputs":[{"name":"totalLiquidityETH","type":"uint256"},{"name":"totalCollateralETH","type":"uint256"},{"name":"totalBorrowsETH","type":"uint256"},{"name":"availableBorrowsETH","type":"uint256"},{"name":"currentLiquidationThreshold","type":"uint256"},{"name":"ltv","type":"uint256"},{"name":"healthFactor","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"_reserve","type":"address"},{"name":"_user","type":"address"}],"name":"getUserReserveData","outputs":[{"name":"currentATokenBalance","type":"uint256"},{"name":"currentUnderlyingBalance","type":"uint256"},{"name":"currentBorrowBalance","type":"uint256"},{"name":"principalBorrowBalance","type":"uint256"},{"name":"borrowRateMode","type":"uint256"},{"name":"borrowRate","type":"uint256"},{"name":"liquidityRate","type":"uint256"},{"name":"originationFee","type":"uint256"},{"name":"variableBorrowIndex","type":"uint256"},{"name":"lastUpdateTimestamp","type":"uint256"},{"name":"usageAsCollateralEnabled","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"getReserves","outputs":[{"name":"","type":"address[]"}],"payable":false,"stateMutability":"view","type":"function"}]
 
+const FICIENT_ABI = [{"inputs":[{"name":"circuit","type":"address[]"},{"name":"amount","type":"uint256"}],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"payable":true,"stateMutability":"payable","type":"fallback"},{"anonymous":false,"inputs":[{"indexed":false,"name":"called","type":"string"}],"name":"loanCalled","type":"event"},{"constant":false,"inputs":[{"name":"_reserve","type":"address"},{"name":"_amount","type":"uint256"},{"name":"_fee","type":"uint256"}],"name":"executeOperation","outputs":[{"name":"returnedAmount","type":"uint256"}],"payable":false,"stateMutability":"nonpayable","type":"function"}]
+
+const FACTORY_ABI = [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "upgradeCircuit",
+          "type": "address[]"
+        },
+        {
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "setCircuit",
+      "outputs": [
+        {
+          "name": "didSucceed",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ]
+
 const MAINNET_PROVIDER  = "mainnet.infura.io/v3/d2bda2c2e7d0463ab1dd077566fb2e3f";
 const KOVAN_PROVIDER = "https://kovan.infura.io/v3/27f94aaf0b9b468fae7c869394b23ed0";
 const AAVE_LPC_ADDR = "0xB36017F5aafDE1a9462959f0e53866433D373404";
@@ -86,7 +114,7 @@ app.get("/", (req,res)=>{
 })
 
 
-app.get("/get_aave_apr", async (req, res)=>{
+app.get("/get_aave_apr", async (req, res) => {
   let options = {address: AAVE_LPC_ADDR}
 
   let aave_lpc_addr = new web3.eth.Contract(AAVE_LPC_ABI,AAVE_LPC_ADDR);
@@ -101,12 +129,23 @@ app.get("/get_aave_apr", async (req, res)=>{
   res.send({data: aprs});
 })
 
+app.get("/try_tranny", async (req, res) => {
+  let cont = new web3.eth.Contract(FACTORY_ABI,"0x8AdFf61407CD73da273f9EB8592DA0E70c306737");
+  console.log("ACCTS:\n\n", web3.eth.accounts)
+  console.log(cont.methods)
+  resp = await cont.methods.setCircuit(['0xc4375b7de8af5a38a93548eb8453a498222c4ff2','0xB36017F5aafDE1a9462959f0e53866433D373404'], 100000).send({from:"0xEb939A1b4EcEeaFA00f5446dE1bf5B44D1bDa8A5"})
+  res.send(resp);
+})
+
 app.get("/get_reserves", (req, res)=>{
   res.send({data: RESERVES});
 })
 
-app.get("/get_uniswap_liquidity")
+app.get("/get_uniswap_liquidity", (req, res) => {
+  console.log(uniswap_sdk)
+})
 
+console.log(`Listening on: ${process.env.PORT}`);
 app.listen(process.env.PORT);
 
 
